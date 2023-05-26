@@ -1,0 +1,13 @@
+@extends('layouts.regular')
+@section('content')
+    <form method='post' action='{{ route("songs.store") }}' class='grid grid-cols-2 grid-rows-5 w-screen max-h-screen h-96 gap-y-2 gap-x-2 p-2'>
+        @csrf
+        @method('post')
+        <span class='flex bg-gradient-to-r from-green-500 to-gray-800 text-white text-3xl row-start-1 row-end-2 col-start-1 col-end-2 justify-center items-center'>Nieuwe song</span>
+        <span class='flex text-black text-3xl row-start-2 row-end-3 col-start-1 col-end-2 justify-end items-center font-bold'>Titel</span>
+        <input type='text' name='title' class='text-black text-3xl row-start-2 row-end-3 col-start-2 col-end-3 text-center'>
+        <span class='flex text-black text-3xl row-start-3 row-end-4 col-start-1 col-end-2 justify-end items-center font-bold'>Auteur</span>
+        <input type='text' name='singer' class='text-black text-3xl row-start-3 row-end-4 col-start-2 col-end-3 text-center'>
+        <button type='submit' class='bg-gradient-to-r from-red-500 to-gray-800 text-white text-3xl row-start-1 row-end-2 col-start-2 col-end-3 cursor-pointer'>Voeg toe</button>
+    </form>
+@endsection
